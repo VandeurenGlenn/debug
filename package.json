@@ -1,0 +1,17 @@
+{
+  "name": "@vandeurenglenn/debug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "debug.js",
+  "module": "debug.js",
+  "browser": "debug.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^5.5.3"
+  }
+}
