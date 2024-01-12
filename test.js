@@ -1,6 +1,7 @@
 const test = require('tape');
 require('./debug');
-DEBUG = ['test'];
+DEBUG = ['test', true];
+debug('hello');
 debug('hello', 'hello');
 debug('test', 'hello');
 const degger = globalThis.createDebugger('test');
