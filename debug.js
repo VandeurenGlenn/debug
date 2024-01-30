@@ -2,7 +2,9 @@ if (!globalThis.DEBUG) {
   let DEBUG = [];
   if (globalThis.localStorage) {
     DEBUG = globalThis.localStorage.getItem('DEBUG');
-    globalThis.DEBUG = DEBUG ? DEBUG.split(',') : [DEBUG];
+    globalThis.DEBUG = DEBUG.startsWith('[')
+      ? JSON.parse(DEBUG).split(',')
+      : [DEBUG];
   }
 }
 
@@ -19,8 +21,12 @@ const debug = (target, text) => {
     else console.log('\x1b[34m\x1b[1m%s', `${target}`, '\x1b[0m');
 };
 
+const createDebugger = (target) => (text) => debug(target, text);
+
 if (!globalThis.debug) {
   globalThis.debug = debug;
-
-  globalThis.createDebugger = (target) => (text) => debug(target, text);
+  // todo: deprecate
+  globalThis.createDebugger = createDebugger;
 }
+
+export { createDebugger };

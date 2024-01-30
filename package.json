@@ -2,9 +2,15 @@
   "name": "@vandeurenglenn/debug",
   "version": "1.2.0",
   "description": "",
-  "main": "debug.js",
-  "module": "debug.js",
   "browser": "debug.js",
+  "exports": {
+    ".": {
+      "import": "./debug.js",
+      "require": "./debug.js",
+      "browser": "./debug.js",
+      "types": "./debug.d.ts"
+    }
+  },
   "scripts": {
     "test": "node test"
   },
