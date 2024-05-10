@@ -8,7 +8,10 @@ if (!globalThis.DEBUG) {
   }
 }
 
-const debug = (target, text) => {
+const getLogger = (trace) => (trace ? console.trace : console.log);
+
+const debug = (target, text, trace) => {
+  const _logger = getLogger(trace);
   if (!globalThis.DEBUG && globalThis.DEBUG.length === 0) return;
   if (
     globalThis.DEBUG === 'true' ||
@@ -17,9 +20,8 @@ const debug = (target, text) => {
     globalThis.DEBUG?.indexOf('*') !== -1 ||
     globalThis.DEBUG?.indexOf(target.split('/')[0]) !== -1
   )
-    if (text)
-      console.trace('\x1b[34m\x1b[1m%s', `${target}: ${text}`, '\x1b[0m');
-    else console.trace('\x1b[34m\x1b[1m%s', `${target}`, '\x1b[0m');
+    if (text) _logger('\x1b[34m\x1b[1m%s', `${target}: ${text}`, '\x1b[0m');
+    else _logger('\x1b[34m\x1b[1m%s', `${target}`, '\x1b[0m');
 };
 
 const createDebugger = (target) => (text) => debug(target, text);
