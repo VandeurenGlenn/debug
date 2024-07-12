@@ -12,7 +12,7 @@ const getLogger = (trace) => (trace ? console.trace : console.log);
 
 const debug = (target, text, trace) => {
   const _logger = getLogger(trace);
-  if (!globalThis.DEBUG && globalThis.DEBUG.length === 0) return;
+  if (!globalThis.DEBUG || globalThis.DEBUG?.length === 0) return;
   if (
     globalThis.DEBUG === 'true' ||
     globalThis.DEBUG === true ||
