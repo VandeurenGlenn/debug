@@ -1,4 +1,3 @@
-import test from "tape";
 import "./debug.js";
 
 DEBUG = ["test", "lfc"];
