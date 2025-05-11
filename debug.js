@@ -1,7 +1,7 @@
 if (!globalThis.DEBUG) {
-  let DEBUG = [];
+  globalThis.DEBUG = [];
   if (globalThis.localStorage) {
-    DEBUG = globalThis.localStorage.getItem("DEBUG");
+    const DEBUG = globalThis.localStorage.getItem("DEBUG");
     if (DEBUG) {
       globalThis.DEBUG = DEBUG.startsWith("[")
         ? JSON.parse(DEBUG).split(",")

@@ -1,11 +1,12 @@
-const test = require('tape');
-require('./debug');
-DEBUG = ['test', 'lfc'];
-debug('hello');
-debug('hello', 'hello');
-debug('test', 'hello');
-const degger = globalThis.createDebugger('lfc/chain');
-degger('world');
+import test from "tape";
+import "./debug.js";
+
+DEBUG = ["test", "lfc"];
+debug("hello");
+debug("hello", "hello");
+debug("test", "hello");
+const degger = globalThis.createDebugger("lfc/chain");
+degger("world");
 
 // test('debug is defined', tape => {
 //   tape.plan(1)
