@@ -2,20 +2,23 @@
   "name": "@vandeurenglenn/debug",
   "version": "1.2.6",
   "description": "",
-  "browser": "debug.js",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./debug.js",
-      "require": "./debug.js",
-      "browser": "./debug.js",
-      "types": "./debug.d.ts"
+      "import": "./exports/debug.js",
+      "types": "./exports/debug.d.ts"
     }
   },
   "scripts": {
+    "build": "rollup -c",
     "test": "node test"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.3.0",
+    "rollup": "^4.53.3",
+    "tslib": "^2.8.1"
+  }
 }

@@ -1,10 +1,9 @@
-import "./debug.js";
+import { setTargets, createDebugger } from "./exports/debug.js";
 
-DEBUG = ["test", "lfc"];
+setTargets(["test", "lfc"]);
+const debug = createDebugger("test");
 debug("hello");
-debug("hello", "hello");
-debug("test", "hello");
-const degger = globalThis.createDebugger("lfc/chain");
+const degger = createDebugger("lfc/chain");
 degger("world");
 
 // test('debug is defined', tape => {

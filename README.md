@@ -9,17 +9,17 @@ npm i -S @vandeurenglenn/debug
 ## usage
 ## v2.0.0
  ```js
-import '@vandeurenglenn/debug'
+import { setTargets, createDebugger } from '@vandeurenglenn/debug'
 
-DEBUG = ['myLib']
-debug('myLib', 'some text')
-const mydebugger = createDebugger('target', 'text')
+setTargets(['myLib'])
+const debug = createDebugger('target')
+debug('text')
  ```
 
-## v1.0.0
- ```js
-import '@vandeurenglenn/debug'
+  ```js
+import { setTargets, createDebugger } from '@vandeurenglenn/debug'
 
-DEBUG = true
-debug('some text')
+setTargets(true)
+const debug = createDebugger('target')
+debug('text')
  ```

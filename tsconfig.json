@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "nodenext",
+        "module": "nodenext",
+        "target": "esnext",
+        "declaration": true,
+        "outDir": "exports",
+    }
+}
