@@ -3,22 +3,38 @@
   "version": "1.2.7",
   "description": "",
   "type": "module",
+  "files": [
+    "exports"
+  ],
   "exports": {
-    ".": {
+    "./debug": {
       "import": "./exports/debug.js",
       "types": "./exports/debug.d.ts"
+    },
+    "./debug.js": {
+      "import": "./exports/debug.js",
+      "types": "./exports/debug.d.ts"
+    },
+    "./local-storage": {
+      "import": "./exports/local-storage.js",
+      "types": "./exports/plugins/local-storage.d.ts"
+    },
+    "./local-storage.js": {
+      "import": "./exports/local-storage.js",
+      "types": "./exports/plugins/local-storage.d.ts"
     }
   },
   "scripts": {
     "build": "rollup -c",
-    "test": "node test"
+    "test": "node test.js"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-typescript": "^12.3.0",
-    "rollup": "^4.53.3",
+    "rollup": "^4.54.0",
+    "rollup-plugin-auto-exports": "^1.1.1",
     "tslib": "^2.8.1"
   }
 }
