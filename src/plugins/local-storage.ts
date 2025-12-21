@@ -1,13 +1,14 @@
-import { setTargets, TARGETS } from "../debug.js";
+import { setTargets, getTargets } from '../utils/targets.js'
 
 /**
  * Browser plugin to set debug targets from localStorage
  */
 if (localStorage) {
-  const DEBUG = localStorage.getItem?.("DEBUG");
+  const DEBUG = localStorage.getItem?.('DEBUG')
   if (DEBUG) {
-    if (TARGETS === undefined) setTargets(JSON.parse(DEBUG));
-    else if (Array.isArray(TARGETS))
-      setTargets([...TARGETS, ...JSON.parse(DEBUG)]);
+    const targets = getTargets()
+    if (targets === undefined) setTargets(JSON.parse(DEBUG))
+    else if (Array.isArray(targets))
+      setTargets([...targets, ...JSON.parse(DEBUG)])
   }
 }
