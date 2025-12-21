@@ -24,5 +24,15 @@ export default {
     dir,
     format: "es",
   },
-  plugins: [typescript(), autoExports()],
+  plugins: [
+    typescript(),
+    autoExports({
+      defaultExports: {
+        ".": {
+          import: "./exports/debug.js",
+          types: "./exports/debug.d.ts",
+        },
+      },
+    }),
+  ],
 };

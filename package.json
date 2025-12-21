@@ -7,6 +7,10 @@
     "exports"
   ],
   "exports": {
+    ".": {
+      "import": "./exports/debug.js",
+      "types": "./exports/debug.d.ts"
+    },
     "./debug": {
       "import": "./exports/debug.js",
       "types": "./exports/debug.d.ts"
@@ -22,6 +26,14 @@
     "./local-storage.js": {
       "import": "./exports/local-storage.js",
       "types": "./exports/plugins/local-storage.d.ts"
+    },
+    "./targets": {
+      "import": "./exports/targets.js",
+      "types": "./exports/utils/targets.d.ts"
+    },
+    "./targets.js": {
+      "import": "./exports/targets.js",
+      "types": "./exports/utils/targets.d.ts"
     }
   },
   "scripts": {
